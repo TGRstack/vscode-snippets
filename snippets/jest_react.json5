@@ -1,0 +1,125 @@
+// -----------------------------------------------------------------------
+//  Typescript React Jest
+// -----------------------------------------------------------------------
+{
+  "Jest React Component": {
+    "prefix": "jestReactComponent",
+    "description": "Create React test component",
+    "body": [
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "",
+      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
+      "",
+      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "  const defaultProps = {}",
+      "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+      "",
+      "  test('render', () => {",
+      "    expect(wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ],
+  },
+  "Jest React Redux Component": {
+    "prefix": "jestReactReduxComponent",
+    "description": "Create React Redux test component",
+    "body": [
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "import { Provider } from 'react-redux'",
+      "",
+      "import store from 'src/redux/store'",
+      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
+      "",
+      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "  const defaultProps = {}",
+      "  const wrapper = renderer.create(",
+      "    <Provider store={store}>",
+      "     <${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+      "    </Provider>,",
+      "  )",
+      "",
+      "  test('render', () => {",
+      "    expect(wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ],
+  },
+  "setupTest": {
+    "prefix": "jestInit",
+    "body": [
+      "import { ${1:${TM_FILENAME_BASE}}, mapStateToProps, mapDispatchToProps } from '../${1:${TM_FILENAME_BASE}}'",
+      "",
+      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "  const defaultProps = {",
+      "",
+      "  }",
+      "",
+      "  const setup = buildSetup(${1:${TM_FILENAME_BASE}}, defaultProps)",
+      "",
+      "  test('render', () => {",
+      "    expect(setup().wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ]
+  },
+  // "Jest enzyme-to-json": {
+  //   "prefix": "jsnap",
+  //   "body": [
+  //     "import toJson from 'enzyme-to-json'",
+  //     "import { ${1:${TM_FILENAME_BASE}}, mapStateToProps, mapDispatchToProps } from '../${1:${TM_FILENAME_BASE}}'",
+  //     "",
+  //     "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+  //     "  const defaultProps = {",
+  //     "",
+  //     "  }",
+  //     "",
+  //     "  const setup = buildSetup(${1:${TM_FILENAME_BASE}}, defaultProps)",
+  //     "",
+  //     "  test('render', () => {",
+  //     "    expect(toJson(setup().wrapper)).toMatchSnapshot()",
+  //     "  })",
+  //     "})",
+  //     ""
+  //   ]
+  // },
+  "Jest Snapshot": {
+    "prefix": "jestSnapshot",
+    "description" : "Snapshot Testing with Jest",
+    "body": [
+      "import React from 'react'",
+      "import ${1:Component} from '../${1:Component}'",
+      "import renderer from 'react-test-renderer'",
+      "",
+      "it('renders correctly', () => {",
+      "\tconst tree = renderer.create(",
+      "\t\t<${1:Component} page='http://www.facebook.com'>Facebook</Link>",
+      "\t).toJSON()",
+      "\texpect(tree).toMatchSnapshot()",
+      "})"
+    ],
+  },
+  "Jest ShallowRenderer": {
+    "prefix": "jestShallowRender",
+    "description" : "Enzyme Shallow Renderer with Jest",
+    "body": [
+      "//__tests__/CheckboxWithLabel-test.js",
+      "import React from 'react'",
+      "import { shallow } from 'enzyme'",
+      "import CheckboxWithLabel from '../CheckboxWithLabel'",
+      "test('Checkbox With Label changes the text after click', () => {",
+      "\t// Render a checkbox with label in the document",
+      "\tconst checkbox=shallow(",
+      "\t\t<CheckboxWithLabel labelOn='On' labelOff='Off' />",
+      "\t)",
+      "\texpect(checkbox.text()).toEqual('Off')",
+      "\tcheckbox.find('input').simulate('change')",
+      "\texpect(checkbox.text()).toEqual('On')",
+      "})"
+    ],
+  },
+}

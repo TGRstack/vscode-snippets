@@ -1,0 +1,36 @@
+{
+  "React Form handleSubmit": {
+    prefix: "handleSubmit",
+    body: [
+      "\thandleSubmit: (e: React.FormEvent<HTMLFormElement>) => void,",
+    ],
+  },
+  "React Form handleClick": {
+    prefix: "handleClick",
+    body: [
+      "\thandleClick: (event: MouseEvent<HTMLInputElement>) => void,",
+    ],
+  },
+  "React Form onTextInput": {
+    prefix: "onTextInput",
+    body: [
+      "onChange = (e: React.FormEvent<HTMLInputElement>) => {",
+      "\t${1:}",
+      "}",
+    ]
+  },
+  "React Form Init": {
+    prefix: "<formInit",
+    body: [
+      "const {",
+      "\treset,",
+      "\tsubmit,",
+      "} = this.props",
+      "",
+      "<form onSubmit={e => {1:this.props.handle}Submit(e)}>",
+      "\t${2:{this.props.children}}",
+      "\t{(reset || submit) && this.renderButtons()}",
+      "</form>",
+    ]
+  }
+}

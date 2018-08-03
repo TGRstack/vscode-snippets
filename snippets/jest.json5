@@ -1,0 +1,285 @@
+// -----------------------------------------------------------------------
+// Typescript Jest
+// PERCENT COMPLETE: 50% ??
+// REFERENCE: [andys8/vscode-jest-snippets](https://raw.githubusercontent.com/andys8/vscode-jest-snippets/master/snippets/snippets.json)
+// -----------------------------------------------------------------------
+{
+  "Jest AsyncCallback": {
+    "prefix": "test('",
+    "body": [
+      "test('the data is peanut butter', (done) => {",
+      "\tfunction callback(data){",
+      "\t\texpect(data).toBe('peanut butter')",
+      "\t\tdone()",
+      "\t}fetchData(callback)",
+      "})"
+    ]
+  },
+  "Jest AsyncPromise": {
+    "prefix": "test('",
+    "body": [
+      "test('the data is peanut butter', () => {",
+      "\treturn fetchData().then((data) => {",
+      "\t\texpect(data).toBe('peanut butter')",
+      "\t})",
+      "})"
+    ]
+  },
+  "Jest AsyncAwait": {
+    "prefix": "test('",
+    "body": [
+      "test('the data is peanut butter', async () => {",
+      "\tlet data = await fetchData()",
+      "\texpect(data).toBe('peanut butter')",
+      "})"
+    ]
+  },
+  "afterAll": {
+    "prefix": "jaa",
+    "description": "afterAll function is called once after all specs",
+    "body": "afterAll(() => {\n\t$0\n})",
+  },
+  "afterEach": {
+    "prefix": "jae",
+    "description": "afterEach function is called once after each spec",
+    "body": "afterEach(() => {\n\t$0\n})",
+  },
+  "beforeAll": {
+    "prefix": "jba",
+    "description": "beforeAll function is called once before all specs",
+    "body": "beforeAll(() => {\n\t$0\n})",
+  },
+  "beforeEach": {
+    "prefix": "jbe",
+    "description": "beforeEach function is called once before each spec",
+    "body": "beforeEach(() => {\n\t$0\n})",
+  },
+  "describe": {
+    "prefix": "jdesc",
+    "description": "creates a describe block",
+    "body": "describe('${1:Name of the group}', () => {\n\t$0\n})",
+  },
+  "describe.only": {
+    "prefix": "jdesco",
+    "description": "creates a describe block that runs only",
+    "body": "describe.only('${1:Name of the group}', () => {\n\t$0\n})",
+  },
+  "describe.skip": {
+    "prefix": "jdescs",
+    "description": "creates a describe block that will be skipped",
+    "body": "describe.skip('${1:Name of the group}', () => {\n\t$0\n})",
+  },
+  "expect": {
+    "prefix": "jexp",
+    "description": "expect actual value",
+    "body": "expect($0)",
+  },
+  "expect.resolves": {
+    "prefix": "jexpr",
+    "description": "expect promise resolves to",
+    "body": "expect($1).resolves$0",
+  },
+  "expect.rejects": {
+    "prefix": "jexprj",
+    "description": "expect promise rejects to",
+    "body": "expect($1).rejects$0",
+  },
+  "it": {
+    "prefix": "jit",
+    "description": "creates an it block",
+    "body": "it('${1:should }', () => {\n\t$0\n})",
+  },
+  "it.only": {
+    "prefix": "jito",
+    "description": "creates an it block that runs only",
+    "body": "it.only('${1:should }', () => {\n\t$0\n})",
+  },
+  "it.skip": {
+    "prefix": "jits",
+    "description": "creates an it block that will be skipped",
+    "body": "it.skip('${1:should }', () => {\n\t$0\n})",
+  },
+  "it:async": {
+    "prefix": "jita",
+    "description": "creates an it block with async callback function",
+    "body": "it('${1:should }', async () => {\n\t$0\n})",
+  },
+  "jest.fn": {
+    "prefix": "jjfn",
+    "description": "creates jest.fn()",
+    "body": "jest.fn($0)",
+  },
+  "template:cut": {
+    "prefix": "jcut",
+    "description": "creates a template to test a class under test",
+    "body": [
+      "describe('${1:Name of the group}', () => {\n",
+      "\tlet ${2:cut}\n",
+        "\tbeforeEach(() => {\n\t\t$2 = $3\n\t})\n",
+        "\ttest('${1:should }', () => {",
+        "\t\texpect($2).toBe($0)",
+        "\t})\n",
+        "})"
+    ],
+  },
+  "test": {
+    "prefix": "jtest",
+    "description": "creates a test block",
+    "body": "test('${1:should }', () => {\n\t$0\n})",
+  },
+  "test.only": {
+    "prefix": "jtesto",
+    "description": "creates a test block  that runs only",
+    "body": "test.only('${1:should }', () => {\n\t$0\n})",
+  },
+  "test.skip": {
+    "prefix": "jtests",
+    "description": "creates a test block that will be skipped",
+    "body": "test.skip('${1:should }', () => {\n\t$0\n})",
+  },
+  "test:async": {
+    "prefix": "jtesta",
+    "description": "creates an test block with async callback function",
+    "body": "test('${1:should }', async () => {\n\t$0\n})",
+  },
+  "toBe": {
+    "prefix": "jtb",
+    "description": "expects the first argument to be equal with the second one",
+    "body": "expect($1).toBe($0)",
+  },
+  "toBeCloseTo": {
+    "prefix": "jtbct",
+    "description": "expects the first argument to be close to the second one base on the delta",
+    "body": "expect($1).toBeCloseTo(${2:number}, ${3:delta})$0",
+  },
+  "toBeDefined": {
+    "prefix": "jtbd",
+    "description": "expects the argument is defined",
+    "body": "expect($1).toBeDefined()$0",
+  },
+  "toBeFalsy": {
+    "prefix": "jtbf",
+    "description": "expects the argument is falsy",
+    "body": "expect($1).toBeFalsy()$0",
+  },
+  "toBeGreaterThan": {
+    "prefix": "jtbgt",
+    "description": "expects the argument is greater than or equal",
+    "body": "expect($1).toBeGreaterThan($0)",
+  },
+  "toBeGreaterThanOrEqual": {
+    "prefix": "jtbgte",
+    "description": "expects the argument is greater than",
+    "body": "expect($1).toBeGreaterThanOrEqual($0)",
+  },
+  "toBeInstanceOf": {
+    "prefix": "jtbi",
+    "description": "expects the argument is less than",
+    "body": "expect($1).toBeInstanceOf($0)",
+  },
+  "toBeLessThan": {
+    "prefix": "jtblt",
+    "description": "expects the argument is less than",
+    "body": "expect($1).toBeLessThan($0)",
+  },
+  "toBeLessThanOrEqual": {
+    "prefix": "jtblte",
+    "description": "expects the argument is less than or equal",
+    "body": "expect($1).toBeLessThanOrEqual($0)",
+  },
+  "toBeNull": {
+    "prefix": "jtbn",
+    "description": "expects the argument is null",
+    "body": "expect($1).toBeNull()$0",
+  },
+  "toBeTruthy": {
+    "prefix": "jtbt",
+    "description": "expects the argument is truthy",
+    "body": "expect($1).toBeTruthy()$0",
+  },
+  "toBeUndefined": {
+    "prefix": "jtbu",
+    "description": "expects the argument is undefined",
+    "body": "expect($1).toBeUndefined()$0",
+  },
+  "toContain": {
+    "prefix": "jtc",
+    "description": "expects the list contains the item (===)",
+    "body": "expect(${1:list}).toContain($0)",
+  },
+  "toContainEqual": {
+    "prefix": "jtce",
+    "description": "expects the list contains the item (equals)",
+    "body": "expect(${1:list}).toContainEqual($0)",
+  },
+  "toEqual": {
+    "prefix": "jte",
+    "description": "expects the first argument to be equal with the second one",
+    "body": "expect($1).toEqual($0)",
+  },
+  "toHaveBeenCalled": {
+    "prefix": "jthbc",
+    "description": "returns true if the spy was called",
+    "body": "expect($1).toHaveBeenCalled()$0",
+  },
+  "toHaveBeenCalledTimes": {
+    "prefix": "jthbct",
+    "description": "returns true if the spy has been called given times",
+    "body": "expect($1).toHaveBeenCalledTimes($0)",
+  },
+  "toHaveBeenCalledWith": {
+    "prefix": "jthbcw",
+    "description": "returns true if the spy has been called with",
+    "body": "expect($1).toHaveBeenCalledWith($0)",
+  },
+  "toHaveBeenLastCalledWith": {
+    "prefix": "jthblcw",
+    "description": "returns true if the spy has been last called with",
+    "body": "expect($1).toHaveBeenLastCalledWith($0)",
+  },
+  "toHaveLength": {
+    "prefix": "jthl",
+    "description": "expects the object to have length",
+    "body": "expect($1).toHaveLength($0)",
+  },
+  "toHaveProperty": {
+    "prefix": "jthp",
+    "description": "returns true if the argument matches the second object",
+    "body": "expect($1).toHaveProperty(${2:keyPath}, ${3:value})$0",
+  },
+  "toMatch": {
+    "prefix": "jtm",
+    "description": "returns true if the argument matches the second value",
+    "body": "expect($1).toMatch($0)",
+  },
+  "toMatchObject": {
+    "prefix": "jtmo",
+    "description": "returns true if the argument matches the second object",
+    "body": "expect($1).toMatchObject($0)",
+  },
+  "toMatchSnapshot": {
+    "prefix": "jtms",
+    "description": "returns true if the argument matches the most recent snapshot",
+    "body": "expect($1).toMatchSnapshot($0)",
+  },
+  "toStrictEqual": {
+    "prefix": "jtse",
+    "description": "expects the first argument to be strictly equal with the second one",
+    "body": "expect($1).toStrictEqual($0)",
+  },
+  "toThrow": {
+    "prefix": "jtt",
+    "description": "expects that the method will throw an error",
+    "body": "expect(() => {\n\t$0\n}).toThrow($1)",
+  },
+  "toThrowError": {
+    "prefix": "jtte",
+    "description": "expects that the method will throw an error",
+    "body": "expect(() => {\n\t$0\n}).toThrowError($1)",
+  },
+  "toThrowErrorMatchingSnapshot": {
+    "prefix": "jttems",
+    "description": "expects that the method will throw an error mathing the snapshpot",
+    "body": "expect(() => {\n\t$0\n}).toThrowErrorMatchingSnapshot()",
+  }
+}

@@ -1,0 +1,1144 @@
+{
+  "React Form handleSubmit": {
+    "prefix": "handleSubmit",
+    "body": [
+      "\thandleSubmit: (e: React.FormEvent<HTMLFormElement>) => void,"
+    ]
+  },
+  "React Form handleClick": {
+    "prefix": "handleClick",
+    "body": [
+      "\thandleClick: (event: MouseEvent<HTMLInputElement>) => void,"
+    ]
+  },
+  "React Form onTextInput": {
+    "prefix": "onTextInput",
+    "body": [
+      "onChange = (e: React.FormEvent<HTMLInputElement>) => {",
+      "\t${1:}",
+      "}"
+    ]
+  },
+  "React Form Init": {
+    "prefix": "<formInit",
+    "body": [
+      "const {",
+      "\treset,",
+      "\tsubmit,",
+      "} = this.props",
+      "",
+      "<form onSubmit={e => {1:this.props.handle}Submit(e)}>",
+      "\t${2:{this.props.children}}",
+      "\t{(reset || submit) && this.renderButtons()}",
+      "</form>"
+    ]
+  },
+  "hocComponentWithRedux": {
+    "prefix": "rxhoc",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "import { connect } from 'react-redux'",
+      "",
+      "export const mapStateToProps = state => ({",
+      "",
+      "})",
+      "",
+      "export const mapDispatchToProps = {",
+      " ",
+      "}",
+      "",
+      "export const ${1:hocComponentName} = (WrappedComponent) => {",
+      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+      "",
+      "  hocComponent.propTypes = {",
+      "  }",
+      "",
+      "  return hocComponent",
+      "}",
+      "",
+      "export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))",
+      ""
+    ]
+  },
+  "React Redux - Component": {
+    "prefix": "tsrxc",
+    "description": "React Redux container",
+    "body": [
+      "import * as React from 'react'",
+      "import { connect } from 'react-redux'",
+      "",
+      "interface IProps {",
+      "}",
+      "",
+      "class ${1:ComponentName} extends React.Component<IProps, any> {",
+      "  render() {",
+      "    return <div>",
+      "      ${2:}",
+      "    </div>",
+      "  }",
+      "}",
+      "",
+      "const mapState2Props = store => {",
+      "  return {",
+      "  }",
+      "}",
+      "",
+      "export default connect(mapState2Props)(${1:ComponentName})",
+      ""
+    ]
+  },
+  "React Redux - Full": {
+    "prefix": "tsrxful",
+    "description": "React Redux container",
+    "body": [
+      "import * as React from 'react'",
+      "import { connect, Dispatch } from 'react-redux'",
+      "",
+      "interface IDispatchProps {",
+      "}",
+      "",
+      "interface IProps extends IDispatchProps {",
+      "}",
+      "",
+      "interface IState {",
+      "}",
+      "",
+      "class ${1:ComponentName} extends React.Component<IProps, IState> {",
+      "  constructor(props: IProps) {",
+      "    super(props)",
+      "",
+      "    this.state = {}",
+      "  }",
+      "",
+      "  render() {",
+      "    return <div>",
+      "      ${2:}",
+      "    </div>",
+      "  }",
+      "}",
+      "",
+      "const mapStoreToProps = store => {",
+      "  return {",
+      "  }",
+      "}",
+      "",
+      "// tslint:disable-next-line no-any",
+      "const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: IProps): IDispatchProps => {",
+      "  return {",
+      "  }",
+      "}",
+      "",
+      "export default connect(",
+      "  mapStoreToProps,",
+      "  mapDispatchToProps,",
+      ")(${1:ComponentName})",
+      ""
+    ]
+  },
+  "reduxAction": {
+    "prefix": "rxaction",
+    "body": [
+      "export const ${1:actionName} = (${2:param}) => ({",
+      "  type: ${3:type},",
+      "  payload: ${4:payload}",
+      "})",
+      ""
+    ]
+  },
+  "reduxConst": {
+    "prefix": "rxconst",
+    "body": "export const ${1:constantName} = '${1:constantName}'"
+  },
+  "reduxReducer": {
+    "prefix": "rxreducer",
+    "body": [
+      "const initialState = {",
+      "",
+      "}",
+      "",
+      "export default (state = initialState, action) => {",
+      "  switch (action.type) {",
+      "",
+      "  case ${1:typeName}:",
+      "    return { ...state }",
+      "",
+      "  default:",
+      "    return state",
+      "  }",
+      "}",
+      ""
+    ]
+  },
+  "reduxSelector": {
+    "prefix": "rxselect",
+    "body": [
+      "import { createSelector } from 'reselect'",
+      "",
+      "export const ${1:selectorName} = state => state.${2:selector}",
+      ""
+    ]
+  },
+  "React Component": {
+    "prefix": "ReactComponent",
+    "description": "Create a React Component with typescript.",
+    "body": [
+      "import * as React from 'react'",
+      "",
+      "interface IProps {",
+      "}",
+      "",
+      "export default class ${1:${TM_FILENAME_BASE}} extends React.Component<IProps, any> {",
+      "  render() {",
+      "    return <div>",
+      "      ${2:}",
+      "    </div>",
+      "  }",
+      "}",
+      ""
+    ]
+  },
+  "React Component - Full": {
+    "prefix": "ReactFullComponent",
+    "description": "Create a stateful React Component.",
+    "body": [
+      "import * as React from 'react'",
+      "",
+      "interface IProps {",
+      "\tlabel: string,",
+      "}",
+      "",
+      "interface IState {",
+      "}",
+      "",
+      "export default class ${1:${TM_FILENAME_BASE}} extends React.Component<IProps, IState> {",
+      "\tstatic defaultProps = {",
+      "\t\tlabel: 'text',",
+      "\t}",
+      "",
+      "\tconstructor(props: IProps) {",
+      "\t\tsuper(props)",
+      "",
+      "\t\tthis.state = {}",
+      "\t}",
+      "",
+      "\trender() {",
+      "\t\treturn <div>",
+      "\t\t  ${2:}",
+      "\t\t</div>",
+      "\t}",
+      "}",
+      ""
+    ]
+  },
+  "React Component - Full w/ Style": {
+    "prefix": "ReactStyledComponent",
+    "description": "Create a stateful React Component.",
+    "body": [
+      "import * as React from 'react'",
+      "import * as S from './${1:${TM_FILENAME_BASE}}.scss'",
+      "",
+      "interface IProps {",
+      "\tlabel: string,",
+      "}",
+      "",
+      "interface IState {",
+      "}",
+      "",
+      "export default class ${1:${TM_FILENAME_BASE}} extends React.Component<IProps, IState> {",
+      "\tstatic defaultProps = {",
+      "\t\tlabel: 'text',",
+      "\t}",
+      "",
+      "\tconstructor(props: IProps) {",
+      "\t\tsuper(props)",
+      "",
+      "\t\tthis.state = {}",
+      "\t}",
+      "",
+      "\trender() {",
+      "\t\treturn <div>",
+      "\t\t  ${2:}",
+      "\t\t</div>",
+      "\t}",
+      "}",
+      ""
+    ]
+  },
+  "React Component - Pure": {
+    "prefix": "ReactPureComponent",
+    "description": "Create a React PureComponent.",
+    "body": [
+      "import * as React from 'react'",
+      "",
+      "interface IProps {",
+      "}",
+      "",
+      "export default class ${1:${TM_FILENAME_BASE}} extends React.PureComponent<IProps, any> {",
+      "  render() {",
+      "    return <div>",
+      "      ${2:}",
+      "    </div>",
+      "  }",
+      "}",
+      ""
+    ]
+  },
+  "React Function - Pure": {
+    "prefix": "ReactPureFunction",
+    "description": "Create a React Pure Function Component.",
+    "body": [
+      "import * as React from 'react'",
+      "",
+      "interface IProps {",
+      "}",
+      "",
+      "export function ${1:${TM_FILENAME_BASE}} (props: IProps): React.PureComponent {",
+      "    return  <div>",
+      "      ${0}",
+      "    </div>",
+      "}",
+      ""
+    ]
+  },
+  "React Stateless Function Component": {
+    "prefix": "ReactFunctionComponent",
+    "description": "Create a React Stateless Functional Component.",
+    "body": [
+      "import * as React from 'react'",
+      "",
+      "interface IProps {",
+      "}",
+      "",
+      "const $1: React.SFC<IProps> = (props: IProps) => {",
+      "  return $0",
+      "}",
+      "",
+      "export default $1"
+    ]
+  },
+  "constructor": {
+    "prefix": "construct(props",
+    "description": "Add a constructor in class.",
+    "body": [
+      "constructor(props: ${1:IProps}) {",
+      "\tsuper(props)",
+      "",
+      "\t${2:}",
+      "}"
+    ]
+  },
+  "constructorWithState": {
+    "prefix": "constructState",
+    "description": "Add a constructor in class.",
+    "body": [
+      "\tconstructor(props: IProps) {",
+      "\t\tsuper(props)",
+      "",
+      "\t\tthis.state = {}",
+      "\t}",
+      ""
+    ]
+  },
+  "componentWillMount": {
+    "prefix": "componentWillMount",
+    "description": "Invoked immediately before mounting occurs. It is called before render().",
+    "body": [
+      "componentWillMount() {",
+      "  ${1:${TM_FILENAME_BASE}}",
+      "}"
+    ]
+  },
+  "render": {
+    "prefix": "render",
+    "description": "When called, it should examine this.props and this.state and return a single React element.",
+    "body": [
+      "render() {",
+      "  return <div className={[S.${2:class}].join(''}>",
+      "    ${1:res}",
+      "  </div>",
+      "}"
+    ]
+  },
+  "componentDidMount": {
+    "prefix": "componentDidMount",
+    "description": "Invoked immediately after a component is mounted.",
+    "body": [
+      "componentDidMount() {",
+      "  ${1:${TM_FILENAME_BASE}}",
+      "}"
+    ]
+  },
+  "componentWillReceiveProps": {
+    "prefix": "componentWillReceiveProps",
+    "description": "Invoked before a mounted component receives new props.",
+    "body": [
+      "componentWillReceiveProps(np: ${1:${IProps}}) {",
+      "  ${2:}",
+      "}"
+    ]
+  },
+  "shouldComponentUpdate": {
+    "prefix": "shouldComponentUpdate",
+    "description": "Invoked before rendering when new props or state are being received.",
+    "body": [
+      "shouldComponentUpdate(np: I${1:}Props, ns: I${1:}State) {",
+      "\tconst cp = this.props",
+      "\t${2:}",
+      "\treturn !deepEqual(cp, np)",
+      "}",
+      ""
+    ]
+  },
+  "componentWillUpdate": {
+    "prefix": "componentWillUpdate",
+    "description": "Invoked immediately before rendering when new props or state are being received.",
+    "body": [
+      "componentWillUpdate(nextProps: ${1:IProps}, nextState) {",
+      "\tconst cp = this.props",
+      "\tconst cs = this.state",
+      "\t${2:}",
+      "}"
+    ]
+  },
+  "componentDidUpdate": {
+    "prefix": "componentDidUpdate",
+    "description": "Invoked immediately after updating occurs. This method is not called for the initial render",
+    "body": [
+      "componentDidUpdate(prevProps: ${1:IProps}, prevState) {",
+      "\tconst cp = this.props",
+      "\tconst cs = this.state",
+      "\t${2:}",
+      "}"
+    ]
+  },
+  "componentWillUnmount": {
+    "prefix": "componentWillUnmount",
+    "description": "Invoked immediately before a component is unmounted and destroyed",
+    "body": [
+      "componentWillUnmount() {",
+      "  ${1:}",
+      "}"
+    ]
+  },
+  "componentSetState": {
+    "description": "Performs a shallow merge of nextState into current state",
+    "prefix": "this.setState",
+    "body": [
+      "this.setState(${1:})"
+    ]
+  },
+  "getDerivedStateFromProps": {
+    "prefix": "getDerivedStateFromProps",
+    "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates",
+    "body": [
+      "static getDerivedStateFromProps(nextProps: ${1:any}, prevState: ${2:any}) {",
+      "  ${0}",
+      "}"
+    ]
+  },
+  "getSnapshotBeforeUpdate": {
+    "prefix": "getSnapshotBeforeUpdate",
+    "description": "Invoked right before the most recently rendered output is committed to e.g. the DOM",
+    "body": [
+      "getSnapshotBeforeUpdate(prevProps: ${1:any}, prevState: ${2:any}) {",
+      "  ${0}",
+      "}"
+    ]
+  },
+  "createContext": {
+    "prefix": "createContext",
+    "body": [
+      "export const {",
+      "\tProvider: ${1:${TM_FILENAME_BASE}}Provider,",
+      "\tConsumer: ${1:${TM_FILENAME_BASE}}Consumer,",
+      "} = React.createContext({",
+      "\tid: sid(),",
+      "\tpage: 0,",
+      "})"
+    ]
+  },
+  "createRef": {
+    "prefix": "createRef",
+    "body": [
+      "this.${1:refName}Ref = React.createRef()",
+      ""
+    ],
+    "description": "Create ref statement used inside constructor"
+  },
+  "forwardRef": {
+    "prefix": "forwardRef",
+    "body": [
+      "const ref = React.createRef()",
+      ""
+    ],
+    "description": "Forward ref statement used inside component"
+  },
+  "hocComponent": {
+    "prefix": "hoc",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "export default (WrappedComponent) => {",
+      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+      "",
+      "  return hocComponent",
+      "}",
+      ""
+    ]
+  },
+  "graphQLForComponent": {
+    "prefix": "importgql",
+    "body": [
+      "import { compose, graphql } from 'react-apollo'",
+      ""
+    ]
+  },
+  "exportGraphQL": {
+    "prefix": "exportgql",
+    "body": [
+      "export default compose(",
+      "  graphql(${1:queryOrMutation}, { name: ${2:name} }),",
+      ")(${1:${TM_FILENAME_BASE}})"
+    ]
+  },
+  "Jest React Component": {
+    "prefix": "jestReactComponent",
+    "description": "Create React test component",
+    "body": [
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "",
+      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
+      "",
+      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "  const defaultProps = {}",
+      "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+      "",
+      "  test('render', () => {",
+      "    expect(wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ]
+  },
+  "Jest React Redux Component": {
+    "prefix": "jestReactReduxComponent",
+    "description": "Create React Redux test component",
+    "body": [
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "import { Provider } from 'react-redux'",
+      "",
+      "import store from 'src/redux/store'",
+      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
+      "",
+      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "  const defaultProps = {}",
+      "  const wrapper = renderer.create(",
+      "    <Provider store={store}>",
+      "     <${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+      "    </Provider>,",
+      "  )",
+      "",
+      "  test('render', () => {",
+      "    expect(wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ]
+  },
+  "setupTest": {
+    "prefix": "jestInit",
+    "body": [
+      "import { ${1:${TM_FILENAME_BASE}}, mapStateToProps, mapDispatchToProps } from '../${1:${TM_FILENAME_BASE}}'",
+      "",
+      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "  const defaultProps = {",
+      "",
+      "  }",
+      "",
+      "  const setup = buildSetup(${1:${TM_FILENAME_BASE}}, defaultProps)",
+      "",
+      "  test('render', () => {",
+      "    expect(setup().wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ]
+  },
+  "Jest Snapshot": {
+    "prefix": "jestSnapshot",
+    "description": "Snapshot Testing with Jest",
+    "body": [
+      "import React from 'react'",
+      "import ${1:Component} from '../${1:Component}'",
+      "import renderer from 'react-test-renderer'",
+      "",
+      "it('renders correctly', () => {",
+      "\tconst tree = renderer.create(",
+      "\t\t<${1:Component} page='http://www.facebook.com'>Facebook</Link>",
+      "\t).toJSON()",
+      "\texpect(tree).toMatchSnapshot()",
+      "})"
+    ]
+  },
+  "Jest ShallowRenderer": {
+    "prefix": "jestShallowRender",
+    "description": "Enzyme Shallow Renderer with Jest",
+    "body": [
+      "//__tests__/CheckboxWithLabel-test.js",
+      "import React from 'react'",
+      "import { shallow } from 'enzyme'",
+      "import CheckboxWithLabel from '../CheckboxWithLabel'",
+      "test('Checkbox With Label changes the text after click', () => {",
+      "\t// Render a checkbox with label in the document",
+      "\tconst checkbox=shallow(",
+      "\t\t<CheckboxWithLabel labelOn='On' labelOff='Off' />",
+      "\t)",
+      "\texpect(checkbox.text()).toEqual('Off')",
+      "\tcheckbox.find('input').simulate('change')",
+      "\texpect(checkbox.text()).toEqual('On')",
+      "})"
+    ]
+  },
+  "Jest AsyncCallback": {
+    "prefix": "test('",
+    "body": [
+      "test('the data is peanut butter', (done) => {",
+      "\tfunction callback(data){",
+      "\t\texpect(data).toBe('peanut butter')",
+      "\t\tdone()",
+      "\t}fetchData(callback)",
+      "})"
+    ]
+  },
+  "Jest AsyncPromise": {
+    "prefix": "test('",
+    "body": [
+      "test('the data is peanut butter', () => {",
+      "\treturn fetchData().then((data) => {",
+      "\t\texpect(data).toBe('peanut butter')",
+      "\t})",
+      "})"
+    ]
+  },
+  "Jest AsyncAwait": {
+    "prefix": "test('",
+    "body": [
+      "test('the data is peanut butter', async () => {",
+      "\tlet data = await fetchData()",
+      "\texpect(data).toBe('peanut butter')",
+      "})"
+    ]
+  },
+  "afterAll": {
+    "prefix": "jaa",
+    "description": "afterAll function is called once after all specs",
+    "body": "afterAll(() => {\n\t$0\n})"
+  },
+  "afterEach": {
+    "prefix": "jae",
+    "description": "afterEach function is called once after each spec",
+    "body": "afterEach(() => {\n\t$0\n})"
+  },
+  "beforeAll": {
+    "prefix": "jba",
+    "description": "beforeAll function is called once before all specs",
+    "body": "beforeAll(() => {\n\t$0\n})"
+  },
+  "beforeEach": {
+    "prefix": "jbe",
+    "description": "beforeEach function is called once before each spec",
+    "body": "beforeEach(() => {\n\t$0\n})"
+  },
+  "describe": {
+    "prefix": "jdesc",
+    "description": "creates a describe block",
+    "body": "describe('${1:Name of the group}', () => {\n\t$0\n})"
+  },
+  "describe.only": {
+    "prefix": "jdesco",
+    "description": "creates a describe block that runs only",
+    "body": "describe.only('${1:Name of the group}', () => {\n\t$0\n})"
+  },
+  "describe.skip": {
+    "prefix": "jdescs",
+    "description": "creates a describe block that will be skipped",
+    "body": "describe.skip('${1:Name of the group}', () => {\n\t$0\n})"
+  },
+  "expect": {
+    "prefix": "jexp",
+    "description": "expect actual value",
+    "body": "expect($0)"
+  },
+  "expect.resolves": {
+    "prefix": "jexpr",
+    "description": "expect promise resolves to",
+    "body": "expect($1).resolves$0"
+  },
+  "expect.rejects": {
+    "prefix": "jexprj",
+    "description": "expect promise rejects to",
+    "body": "expect($1).rejects$0"
+  },
+  "it": {
+    "prefix": "jit",
+    "description": "creates an it block",
+    "body": "it('${1:should }', () => {\n\t$0\n})"
+  },
+  "it.only": {
+    "prefix": "jito",
+    "description": "creates an it block that runs only",
+    "body": "it.only('${1:should }', () => {\n\t$0\n})"
+  },
+  "it.skip": {
+    "prefix": "jits",
+    "description": "creates an it block that will be skipped",
+    "body": "it.skip('${1:should }', () => {\n\t$0\n})"
+  },
+  "it:async": {
+    "prefix": "jita",
+    "description": "creates an it block with async callback function",
+    "body": "it('${1:should }', async () => {\n\t$0\n})"
+  },
+  "jest.fn": {
+    "prefix": "jjfn",
+    "description": "creates jest.fn()",
+    "body": "jest.fn($0)"
+  },
+  "template:cut": {
+    "prefix": "jcut",
+    "description": "creates a template to test a class under test",
+    "body": [
+      "describe('${1:Name of the group}', () => {\n",
+      "\tlet ${2:cut}\n",
+      "\tbeforeEach(() => {\n\t\t$2 = $3\n\t})\n",
+      "\ttest('${1:should }', () => {",
+      "\t\texpect($2).toBe($0)",
+      "\t})\n",
+      "})"
+    ]
+  },
+  "test": {
+    "prefix": "jtest",
+    "description": "creates a test block",
+    "body": "test('${1:should }', () => {\n\t$0\n})"
+  },
+  "test.only": {
+    "prefix": "jtesto",
+    "description": "creates a test block  that runs only",
+    "body": "test.only('${1:should }', () => {\n\t$0\n})"
+  },
+  "test.skip": {
+    "prefix": "jtests",
+    "description": "creates a test block that will be skipped",
+    "body": "test.skip('${1:should }', () => {\n\t$0\n})"
+  },
+  "test:async": {
+    "prefix": "jtesta",
+    "description": "creates an test block with async callback function",
+    "body": "test('${1:should }', async () => {\n\t$0\n})"
+  },
+  "toBe": {
+    "prefix": "jtb",
+    "description": "expects the first argument to be equal with the second one",
+    "body": "expect($1).toBe($0)"
+  },
+  "toBeCloseTo": {
+    "prefix": "jtbct",
+    "description": "expects the first argument to be close to the second one base on the delta",
+    "body": "expect($1).toBeCloseTo(${2:number}, ${3:delta})$0"
+  },
+  "toBeDefined": {
+    "prefix": "jtbd",
+    "description": "expects the argument is defined",
+    "body": "expect($1).toBeDefined()$0"
+  },
+  "toBeFalsy": {
+    "prefix": "jtbf",
+    "description": "expects the argument is falsy",
+    "body": "expect($1).toBeFalsy()$0"
+  },
+  "toBeGreaterThan": {
+    "prefix": "jtbgt",
+    "description": "expects the argument is greater than or equal",
+    "body": "expect($1).toBeGreaterThan($0)"
+  },
+  "toBeGreaterThanOrEqual": {
+    "prefix": "jtbgte",
+    "description": "expects the argument is greater than",
+    "body": "expect($1).toBeGreaterThanOrEqual($0)"
+  },
+  "toBeInstanceOf": {
+    "prefix": "jtbi",
+    "description": "expects the argument is less than",
+    "body": "expect($1).toBeInstanceOf($0)"
+  },
+  "toBeLessThan": {
+    "prefix": "jtblt",
+    "description": "expects the argument is less than",
+    "body": "expect($1).toBeLessThan($0)"
+  },
+  "toBeLessThanOrEqual": {
+    "prefix": "jtblte",
+    "description": "expects the argument is less than or equal",
+    "body": "expect($1).toBeLessThanOrEqual($0)"
+  },
+  "toBeNull": {
+    "prefix": "jtbn",
+    "description": "expects the argument is null",
+    "body": "expect($1).toBeNull()$0"
+  },
+  "toBeTruthy": {
+    "prefix": "jtbt",
+    "description": "expects the argument is truthy",
+    "body": "expect($1).toBeTruthy()$0"
+  },
+  "toBeUndefined": {
+    "prefix": "jtbu",
+    "description": "expects the argument is undefined",
+    "body": "expect($1).toBeUndefined()$0"
+  },
+  "toContain": {
+    "prefix": "jtc",
+    "description": "expects the list contains the item (===)",
+    "body": "expect(${1:list}).toContain($0)"
+  },
+  "toContainEqual": {
+    "prefix": "jtce",
+    "description": "expects the list contains the item (equals)",
+    "body": "expect(${1:list}).toContainEqual($0)"
+  },
+  "toEqual": {
+    "prefix": "jte",
+    "description": "expects the first argument to be equal with the second one",
+    "body": "expect($1).toEqual($0)"
+  },
+  "toHaveBeenCalled": {
+    "prefix": "jthbc",
+    "description": "returns true if the spy was called",
+    "body": "expect($1).toHaveBeenCalled()$0"
+  },
+  "toHaveBeenCalledTimes": {
+    "prefix": "jthbct",
+    "description": "returns true if the spy has been called given times",
+    "body": "expect($1).toHaveBeenCalledTimes($0)"
+  },
+  "toHaveBeenCalledWith": {
+    "prefix": "jthbcw",
+    "description": "returns true if the spy has been called with",
+    "body": "expect($1).toHaveBeenCalledWith($0)"
+  },
+  "toHaveBeenLastCalledWith": {
+    "prefix": "jthblcw",
+    "description": "returns true if the spy has been last called with",
+    "body": "expect($1).toHaveBeenLastCalledWith($0)"
+  },
+  "toHaveLength": {
+    "prefix": "jthl",
+    "description": "expects the object to have length",
+    "body": "expect($1).toHaveLength($0)"
+  },
+  "toHaveProperty": {
+    "prefix": "jthp",
+    "description": "returns true if the argument matches the second object",
+    "body": "expect($1).toHaveProperty(${2:keyPath}, ${3:value})$0"
+  },
+  "toMatch": {
+    "prefix": "jtm",
+    "description": "returns true if the argument matches the second value",
+    "body": "expect($1).toMatch($0)"
+  },
+  "toMatchObject": {
+    "prefix": "jtmo",
+    "description": "returns true if the argument matches the second object",
+    "body": "expect($1).toMatchObject($0)"
+  },
+  "toMatchSnapshot": {
+    "prefix": "jtms",
+    "description": "returns true if the argument matches the most recent snapshot",
+    "body": "expect($1).toMatchSnapshot($0)"
+  },
+  "toStrictEqual": {
+    "prefix": "jtse",
+    "description": "expects the first argument to be strictly equal with the second one",
+    "body": "expect($1).toStrictEqual($0)"
+  },
+  "toThrow": {
+    "prefix": "jtt",
+    "description": "expects that the method will throw an error",
+    "body": "expect(() => {\n\t$0\n}).toThrow($1)"
+  },
+  "toThrowError": {
+    "prefix": "jtte",
+    "description": "expects that the method will throw an error",
+    "body": "expect(() => {\n\t$0\n}).toThrowError($1)"
+  },
+  "toThrowErrorMatchingSnapshot": {
+    "prefix": "jttems",
+    "description": "expects that the method will throw an error mathing the snapshpot",
+    "body": "expect(() => {\n\t$0\n}).toThrowErrorMatchingSnapshot()"
+  },
+  "tslintLine NoAny": {
+    "prefix": "// tslLineNoAny",
+    "body": [
+      "// tslint:disable-line no-any"
+    ]
+  },
+  "tslintNextLine NoAny": {
+    "prefix": "// tslNextNoAny",
+    "body": [
+      "// tslint:disable-next-line no-any"
+    ]
+  },
+  "tslintDisable NoAny": {
+    "prefix": "// tslDisableNoAny",
+    "body": [
+      "// tslint:disable no-any"
+    ]
+  },
+  "import": {
+    "prefix": "import",
+    "description": "Create a import",
+    "body": "import ${2:moduleName} from '${1:module}'$0"
+  },
+  "importNoModuleName": {
+    "prefix": "importNoModuleName",
+    "body": "import '${1:module}'$0"
+  },
+  "importDestructing": {
+    "prefix": "importDestructing",
+    "body": "import { $2 } from '${1:module}'$0"
+  },
+  "importEverything": {
+    "prefix": "importEverything",
+    "body": "import * as ${2:alias} from '${1:module}'$0"
+  },
+  "importAs": {
+    "prefix": "importAs",
+    "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
+  },
+  "exportDefault": {
+    "prefix": "exportDefault",
+    "body": "export default $1$0"
+  },
+  "exportDestructing": {
+    "prefix": "exportDestructing",
+    "body": "export { $2 } from '${1:module}'$0"
+  },
+  "exportAs": {
+    "prefix": "exportAs",
+    "body": "export { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
+  },
+  "exportNamedFunction": {
+    "prefix": "exportNamedFunction",
+    "body": [
+      "export const ${1:functionName} = (${2:params}) => {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Export named function in ES7 syntax"
+  },
+  "exportDefaultFunction": {
+    "prefix": "exportDefaultFunction",
+    "body": [
+      "export default (${1:params}) => {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Export default function in ES7 syntax"
+  },
+  "c": {
+    "prefix": "promise",
+    "body": [
+      "return new Promise((resolve, reject) => {",
+      "  ${1}",
+      "})",
+      ""
+    ],
+    "description": "Creates and returns a new Promise in the standard ES7 syntax"
+  },
+  "method small": {
+    "prefix": "methodOneLine",
+    "description": "Creates a method inside a class",
+    "body": [
+      "${1:methodName} = (${2:params}) => {",
+      "  ${0}",
+      "}",
+      ""
+    ]
+  },
+  "method big": {
+    "prefix": "methodThreeLine",
+    "description": "Creates a method inside a class",
+    "body": [
+      "${1:methodName} = (${2:e}) => {",
+      "  ${3:}",
+      "}"
+    ]
+  },
+  "anonymousFunction": {
+    "prefix": "anfn",
+    "body": [
+      "(${1:params}) => {",
+      "  ${2}",
+      "}",
+      ""
+    ],
+    "description": "Creates an anonymous function in ES7 syntax"
+  },
+  "namedFunction": {
+    "prefix": "nfn",
+    "body": [
+      "const ${1:name} = (${2:params}) => {",
+      "  ${3}",
+      "}",
+      ""
+    ],
+    "description": "Creates a named function in ES7 syntax"
+  },
+  "setInterval": {
+    "prefix": "setInterval",
+    "body": [
+      "setInterval(() => {",
+      "  ${2}",
+      "}, ${0:intervalInms})",
+      ""
+    ],
+    "description": "Executes the given function at specified intervals in ES7 syntax"
+  },
+  "setTimeOut": {
+    "prefix": "setTimeOut",
+    "body": [
+      "setTimeout(() => {",
+      "  ${2}",
+      "}, ${1:delayInms})",
+      ""
+    ],
+    "description": "Executes the given function after the specified delay in ES7 syntax"
+  },
+  "arrayForEach": {
+    "prefix": "arrayForEach",
+    "body": [
+      "${1:array}.forEach(${2:currentItem} => {",
+      "  ${0}",
+      "})",
+      ""
+    ],
+    "description": "Creates a forEach statement in ES7 syntax"
+  },
+  "arrayForOf": {
+    "prefix": "arrayForOf",
+    "body": [
+      "for(let ${1:item} of ${2:object}) {",
+      "  ${0}",
+      "}",
+      ""
+    ],
+    "description": "Iterating over property names of iterable objects"
+  },
+  "arrayForIn": {
+    "prefix": "arrayForIn",
+    "body": [
+      "for(let ${1:item} in ${2:object}) {",
+      "  ${0}",
+      "}",
+      ""
+    ],
+    "description": "Iterating over property values of iterable objects"
+  },
+  "propertyGet": {
+    "prefix": "propertyGet",
+    "body": [
+      "get ${1:propertyName} = () => {",
+      "  return this.${0}",
+      "}",
+      ""
+    ],
+    "description": "Creates a getter property inside a class in ES7 syntax"
+  },
+  "propertyset": {
+    "prefix": "propertyset",
+    "body": [
+      "set ${1:propertyName} = (${2:value}) => {",
+      "  ${0}",
+      "}",
+      ""
+    ],
+    "description": "Creates a setter property inside a class in ES7 syntax"
+  },
+  "consoleAssert": {
+    "prefix": "consoleAssert",
+    "body": "console.assert(${1:expression}, ${2:object})",
+    "description": "If the specified expression is false, the message is written to the console along with a stack trace"
+  },
+  "consoleClear": {
+    "prefix": "consoleClear",
+    "body": "console.clear()",
+    "description": "Clears the console"
+  },
+  "consoleCount": {
+    "prefix": "consoleCount",
+    "body": "console.count(${1:label})",
+    "description": "Writes the the number of times that count() has been invoked at the same line and with the same label"
+  },
+  "consoleDir": {
+    "prefix": "consoleDir",
+    "body": "console.dir(${1:object})",
+    "description": "Prints a JavaScript representation of the specified object"
+  },
+  "consoleError": {
+    "prefix": "consoleError",
+    "body": "console.error(${1:object})",
+    "description": "Displays a message in the console and also includes a stack trace from where the method was called"
+  },
+  "consoleGroup": {
+    "prefix": "consoleGroup",
+    "body": "console.group(\"${1:label}\")",
+    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+  },
+  "consoleGroupEnd": {
+    "prefix": "consoleGroupEnd",
+    "body": "console.groupEnd()",
+    "description": "Closes out the corresponding console.group()."
+  },
+  "consoleLog": {
+    "prefix": "consoleLog",
+    "body": "console.log(${1:object})",
+    "description": "Displays a message in the console"
+  },
+  "consoleTrace": {
+    "prefix": "consoleTrace",
+    "body": "console.trace(${1:object})",
+    "description": "Prints a stack trace from the point where the method was called"
+  },
+  "consoleWarn": {
+    "prefix": "consoleWarn",
+    "body": "console.warn(${1:object})",
+    "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+  },
+  "consoleInfo": {
+    "prefix": "consoleInfo",
+    "body": "console.info(${1:object})",
+    "description": "Displays a message in the console but also displays a blue information icon along with the logged message"
+  },
+  "bind method": {
+    "prefix": "thisBind",
+    "description": "bind this in method",
+    "body": [
+      "this.${1:} = this.${1:}.bind(this)"
+    ]
+  },
+  "Comment Block": {
+    "prefix": "commentBlock",
+    "body": [
+      "/* $1",
+      " * $2",
+      "*/"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+// -----------------------------------------------------------
+//  GraphQL
+// -----------------------------------------------------------
+{
+  "graphQLForComponent": {
+    "prefix": "importgql",
+    "body": ["import { compose, graphql } from 'react-apollo'", ""]
+  },
+  "exportGraphQL": {
+    "prefix": "exportgql",
+    "body": [
+      "export default compose(",
+      "  graphql(${1:queryOrMutation}, { name: ${2:name} }),",
+      ")(${1:${TM_FILENAME_BASE}})"
+    ]
+  },
+}

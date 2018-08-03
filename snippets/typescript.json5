@@ -1,0 +1,202 @@
+{
+  // # Modues
+  "import": {
+    "prefix": "import",
+    "description": "Create a import",
+    "body": "import ${2:moduleName} from '${1:module}'$0"
+  },
+  "importNoModuleName": {
+    "prefix": "importNoModuleName",
+    "body": "import '${1:module}'$0"
+  },
+  "importDestructing": {
+    "prefix": "importDestructing",
+    "body": "import { $2 } from '${1:module}'$0"
+  },
+  "importEverything": {
+    "prefix": "importEverything",
+    "body": "import * as ${2:alias} from '${1:module}'$0"
+  },
+  "importAs": {
+    "prefix": "importAs",
+    "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
+  },
+  "exportDefault": {
+    "prefix": "exportDefault",
+    "body": "export default $1$0"
+  },
+  "exportDestructing": {
+    "prefix": "exportDestructing",
+    "body": "export { $2 } from '${1:module}'$0"
+  },
+  "exportAs": {
+    "prefix": "exportAs",
+    "body": "export { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
+  },
+  "exportNamedFunction": {
+    "prefix": "exportNamedFunction",
+    "body": ["export const ${1:functionName} = (${2:params}) => {", "  $0", "}", ""],
+    "description": "Export named function in ES7 syntax"
+  },
+  "exportDefaultFunction": {
+    "prefix": "exportDefaultFunction",
+    "body": ["export default (${1:params}) => {", "  $0", "}", ""],
+    "description": "Export default function in ES7 syntax"
+  },
+
+  // # Async
+  "c": {
+    "prefix": "promise",
+    "body": ["return new Promise((resolve, reject) => {", "  ${1}", "})", ""],
+    "description": "Creates and returns a new Promise in the standard ES7 syntax"
+  },
+
+  // # Methods
+	"method small": {
+		"prefix": "methodOneLine",
+    "description": "Creates a method inside a class",
+    "body": ["${1:methodName} = (${2:params}) => {", "  ${0}", "}", ""],
+	},
+	"method big": {
+		"prefix": "methodThreeLine",
+    "description": "Creates a method inside a class",
+		"body": [
+			"${1:methodName} = (${2:e}) => {",
+			"  ${3:}",
+			"}"
+		],
+  },
+  "anonymousFunction": {
+    "prefix": "anfn",
+    "body": ["(${1:params}) => {", "  ${2}", "}", ""],
+    "description": "Creates an anonymous function in ES7 syntax"
+  },
+  "namedFunction": {
+    "prefix": "nfn",
+    "body": ["const ${1:name} = (${2:params}) => {", "  ${3}", "}", ""],
+    "description": "Creates a named function in ES7 syntax"
+  },
+
+  // # Intervals
+  "setInterval": {
+    "prefix": "setInterval",
+    "body": ["setInterval(() => {", "  ${2}", "}, ${0:intervalInms})", ""],
+    "description": "Executes the given function at specified intervals in ES7 syntax"
+  },
+  "setTimeOut": {
+    "prefix": "setTimeOut",
+    "body": ["setTimeout(() => {", "  ${2}", "}, ${1:delayInms})", ""],
+    "description": "Executes the given function after the specified delay in ES7 syntax"
+  },
+
+  // # Loops
+  "arrayForEach": {
+    "prefix": "arrayForEach",
+    "body": ["${1:array}.forEach(${2:currentItem} => {", "  ${0}", "})", ""],
+    "description": "Creates a forEach statement in ES7 syntax"
+  },
+  "arrayForOf": {
+    "prefix": "arrayForOf",
+    "body": ["for(let ${1:item} of ${2:object}) {", "  ${0}", "}", ""],
+    "description": "Iterating over property names of iterable objects"
+  },
+  "arrayForIn": {
+    "prefix": "arrayForIn",
+    "body": ["for(let ${1:item} in ${2:object}) {", "  ${0}", "}", ""],
+    "description": "Iterating over property values of iterable objects"
+  },
+
+  // # Property get/set
+  "propertyGet": {
+    "prefix": "propertyGet",
+    "body": ["get ${1:propertyName} = () => {", "  return this.${0}", "}", ""],
+    "description": "Creates a getter property inside a class in ES7 syntax"
+  },
+  "propertyset": {
+    "prefix": "propertyset",
+    "body": ["set ${1:propertyName} = (${2:value}) => {", "  ${0}", "}", ""],
+    "description": "Creates a setter property inside a class in ES7 syntax"
+  },
+
+  // # Consoles
+  "consoleAssert": {
+    "prefix": "consoleAssert",
+    "body": "console.assert(${1:expression}, ${2:object})",
+    "description":
+      "If the specified expression is false, the message is written to the console along with a stack trace"
+  },
+  "consoleClear": {
+    "prefix": "consoleClear",
+    "body": "console.clear()",
+    "description": "Clears the console"
+  },
+  "consoleCount": {
+    "prefix": "consoleCount",
+    "body": "console.count(${1:label})",
+    "description":
+      "Writes the the number of times that count() has been invoked at the same line and with the same label"
+  },
+  "consoleDir": {
+    "prefix": "consoleDir",
+    "body": "console.dir(${1:object})",
+    "description": "Prints a JavaScript representation of the specified object"
+  },
+  "consoleError": {
+    "prefix": "consoleError",
+    "body": "console.error(${1:object})",
+    "description":
+      "Displays a message in the console and also includes a stack trace from where the method was called"
+  },
+  "consoleGroup": {
+    "prefix": "consoleGroup",
+    "body": "console.group(\"${1:label}\")",
+    "description":
+      "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+  },
+  "consoleGroupEnd": {
+    "prefix": "consoleGroupEnd",
+    "body": "console.groupEnd()",
+    "description": "Closes out the corresponding console.group()."
+  },
+  "consoleLog": {
+    "prefix": "consoleLog",
+    "body": "console.log(${1:object})",
+    "description": "Displays a message in the console"
+  },
+  "consoleTrace": {
+    "prefix": "consoleTrace",
+    "body": "console.trace(${1:object})",
+    "description": "Prints a stack trace from the point where the method was called"
+  },
+  "consoleWarn": {
+    "prefix": "consoleWarn",
+    "body": "console.warn(${1:object})",
+    "description":
+      "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+  },
+  "consoleInfo": {
+    "prefix": "consoleInfo",
+    "body": "console.info(${1:object})",
+    "description":
+      "Displays a message in the console but also displays a blue information icon along with the logged message"
+  },
+
+  // # Misc
+	"bind method": {
+		"prefix": "thisBind",
+    "description": "bind this in method",
+		"body": [
+			"this.${1:} = this.${1:}.bind(this)"
+		],
+  },
+
+  // # Comments
+  "Comment Block": {
+    "prefix": "commentBlock",
+    "body": [
+      "/* $1",
+      " * $2",
+      "*/"
+    ]
+  },
+}

@@ -1,0 +1,53 @@
+{
+  "name": "tgr-snippet-pack",
+  "version": "1.0.0",
+  "displayName": "TGRStack.com snippet pack.",
+  "description": "Typescript GraphQL React Snippets for a great experience!",
+  "publisher": "tgrstack",
+  "icon": "images/TypeScript.png",
+  "scripts": {
+    "prepare": "node ./build.js"
+  },
+  "galleryBanner": {
+    "color": "#222222",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TGRstack/vscode-snippets.git"
+  },
+  "engines": {
+    "vscode": "^1.15.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "es9",
+    "typescript",
+    "graphql",
+    "react",
+    "node"
+  ],
+  "author": "falieson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TGRstack/vscode-snippets/issues"
+  },
+  "homepage": "https://github.com/TGRstack/vscode-snippets#readme",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./dist/typescript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./dist/typescriptreact.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "json5": "^1.0.1"
+  }
+}

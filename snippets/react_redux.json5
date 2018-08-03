@@ -1,0 +1,155 @@
+// -----------------------------------------------------------------------
+//  Typescript React Redux
+// -----------------------------------------------------------------------
+{
+  "hocComponentWithRedux": {
+    "prefix": "rxhoc",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "import { connect } from 'react-redux'",
+      "",
+      "export const mapStateToProps = state => ({",
+      "",
+      "})",
+      "",
+      "export const mapDispatchToProps = {",
+      " ",
+      "}",
+      "",
+      "export const ${1:hocComponentName} = (WrappedComponent) => {",
+      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+      "",
+      "  hocComponent.propTypes = {",
+      "  }",
+      "",
+      "  return hocComponent",
+      "}",
+      "",
+      "export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))",
+      ""
+    ]
+  },
+
+  // ## React Redux Components
+  "React Redux - Component": {
+    "prefix": "tsrxc",
+    "description": "React Redux container",
+    "body": [
+      "import * as React from 'react'",
+      "import { connect } from 'react-redux'",
+      "",
+      "interface IProps {",
+      "}",
+      "",
+      "class ${1:ComponentName} extends React.Component<IProps, any> {",
+      "  render() {",
+      "    return <div>",
+      "      ${2:}",
+      "    </div>",
+      "  }",
+      "}",
+      "",
+      "const mapState2Props = store => {",
+      "  return {",
+      "  }",
+      "}",
+      "",
+      "export default connect(mapState2Props)(${1:ComponentName})",
+      ""
+    ],
+  },
+  "React Redux - Full": {
+    "prefix": "tsrxful",
+    "description": "React Redux container",
+    "body": [
+      "import * as React from 'react'",
+      "import { connect, Dispatch } from 'react-redux'",
+      "",
+      "interface IDispatchProps {",
+      "}",
+      "",
+      "interface IProps extends IDispatchProps {",
+      "}",
+      "",
+      "interface IState {",
+      "}",
+      "",
+      "class ${1:ComponentName} extends React.Component<IProps, IState> {",
+      "  constructor(props: IProps) {",
+      "    super(props)",
+      "",
+      "    this.state = {}",
+      "  }",
+      "",
+      "  render() {",
+      "    return <div>",
+      "      ${2:}",
+      "    </div>",
+      "  }",
+      "}",
+      "",
+      "const mapStoreToProps = store => {",
+      "  return {",
+      "  }",
+      "}",
+      "",
+      "// tslint:disable-next-line no-any",
+      "const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: IProps): IDispatchProps => {",
+      "  return {",
+      "  }",
+      "}",
+      "",
+      "export default connect(",
+      "  mapStoreToProps,",
+      "  mapDispatchToProps,",
+      ")(${1:ComponentName})",
+      ""
+    ],
+  },
+
+  // # Redux Helpers
+  "reduxAction": {
+    "prefix": "rxaction",
+    "body": [
+      "export const ${1:actionName} = (${2:param}) => ({",
+      "  type: ${3:type},",
+      "  payload: ${4:payload}",
+      "})",
+      ""
+    ]
+  },
+  "reduxConst": {
+    "prefix": "rxconst",
+    "body": "export const ${1:constantName} = '${1:constantName}'"
+  },
+  "reduxReducer": {
+    "prefix": "rxreducer",
+    "body": [
+      "const initialState = {",
+      "",
+      "}",
+      "",
+      "export default (state = initialState, action) => {",
+      "  switch (action.type) {",
+      "",
+      "  case ${1:typeName}:",
+      "    return { ...state }",
+      "",
+      "  default:",
+      "    return state",
+      "  }",
+      "}",
+      ""
+    ]
+  },
+  "reduxSelector": {
+    "prefix": "rxselect",
+    "body": [
+      "import { createSelector } from 'reselect'",
+      "",
+      "export const ${1:selectorName} = state => state.${2:selector}",
+      ""
+    ]
+  },
+}
