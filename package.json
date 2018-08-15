@@ -44,6 +44,10 @@
       {
         "language": "typescriptreact",
         "path": "./dist/typescriptreact.json"
+      },
+      {
+        "language": "json",
+        "path": "./dist/js_on.json"
       }
     ]
   },

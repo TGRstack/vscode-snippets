@@ -1,4 +1,22 @@
 {
+  "tslintLine NoAny": {
+    "prefix": "tslLineNoAny",
+    "body": [
+      "// tslint:disable-line no-any"
+    ]
+  },
+  "tslintNextLine NoAny": {
+    "prefix": "tslNextNoAny",
+    "body": [
+      "// tslint:disable-next-line no-any"
+    ]
+  },
+  "tslintDisable NoAny": {
+    "prefix": "tslDisableNoAny",
+    "body": [
+      "// tslint:disable no-any"
+    ]
+  },
   "import": {
     "prefix": "import",
     "description": "Create a import",

@@ -6,15 +6,15 @@
 // Line | Next | Disable
 {
   "tslintLine NoAny": {
-    prefix: "// tslLineNoAny",
+    prefix: "tslLineNoAny",
     body: ["// tslint:disable-line no-any"],
   },
   "tslintNextLine NoAny": {
-    prefix: "// tslNextNoAny",
+    prefix: "tslNextNoAny",
     body: ["// tslint:disable-next-line no-any"],
   },
   "tslintDisable NoAny": {
-    prefix: "// tslDisableNoAny",
+    prefix: "tslDisableNoAny",
     body: ["// tslint:disable no-any"],
   },
 }

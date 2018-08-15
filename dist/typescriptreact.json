@@ -293,10 +293,10 @@
       "interface IProps {",
       "}",
       "",
-      "export function ${1:${TM_FILENAME_BASE}} (props: IProps): React.PureComponent {",
-      "    return  <div>",
-      "      ${0}",
-      "    </div>",
+      "export default function ${1:${TM_FILENAME_BASE}}(props: IProps): JSX.Element {",
+      " \treturn  <div>",
+      " \t  ${0}",
+      " \t</div>",
       "}",
       ""
     ]
@@ -340,6 +340,16 @@
       ""
     ]
   },
+  "defaultProps": {
+    "prefix": "defaultProps",
+    "description": "Add defaultProps in class.",
+    "body": [
+      "\tstatic defaultProps = {",
+      "\t\tlabel: 'text',",
+      "\t}",
+      ""
+    ]
+  },
   "componentWillMount": {
     "prefix": "componentWillMount",
     "description": "Invoked immediately before mounting occurs. It is called before render().",
@@ -374,7 +384,8 @@
     "description": "Invoked before a mounted component receives new props.",
     "body": [
       "componentWillReceiveProps(np: ${1:${IProps}}) {",
-      "  ${2:}",
+      "\tconst cp = this.props",
+      "\t${2:}",
       "}"
     ]
   },
@@ -405,7 +416,7 @@
     "prefix": "componentDidUpdate",
     "description": "Invoked immediately after updating occurs. This method is not called for the initial render",
     "body": [
-      "componentDidUpdate(prevProps: ${1:IProps}, prevState) {",
+      "componentDidUpdate(pp: ${1:IProps}, ps: ${1:IState}) {",
       "\tconst cp = this.props",
       "\tconst cs = this.state",
       "\t${2:}",
@@ -882,19 +893,19 @@
     "body": "expect(() => {\n\t$0\n}).toThrowErrorMatchingSnapshot()"
   },
   "tslintLine NoAny": {
-    "prefix": "// tslLineNoAny",
+    "prefix": "tslLineNoAny",
     "body": [
       "// tslint:disable-line no-any"
     ]
   },
   "tslintNextLine NoAny": {
-    "prefix": "// tslNextNoAny",
+    "prefix": "tslNextNoAny",
     "body": [
       "// tslint:disable-next-line no-any"
     ]
   },
   "tslintDisable NoAny": {
-    "prefix": "// tslDisableNoAny",
+    "prefix": "tslDisableNoAny",
     "body": [
       "// tslint:disable no-any"
     ]
